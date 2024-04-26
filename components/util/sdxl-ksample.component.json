@@ -1,6 +1,6 @@
 {
-  "last_node_id": 31,
-  "last_link_id": 44,
+  "last_node_id": 35,
+  "last_link_id": 54,
   "nodes": [
     {
       "id": 13,
@@ -109,61 +109,39 @@
               {
                 "default": 8,
                 "min": 0,
-                "max": 100
+                "max": 100,
+                "step": 0.1,
+                "round": 0.01
               }
             ]
           }
         },
         {
           "name": "sampler_name",
-          "type": "euler,euler_ancestral,heun,dpm_2,dpm_2_ancestral,lms,dpm_fast,dpm_adaptive,dpmpp_2s_ancestral,dpmpp_sde,dpmpp_sde_gpu,dpmpp_2m,dpmpp_2m_sde,dpmpp_2m_sde_gpu,ddim,uni_pc,uni_pc_bh2",
+          "type": "COMBO",
           "link": 25,
           "widget": {
             "name": "sampler_name",
             "config": [
-              [
-                "euler",
-                "euler_ancestral",
-                "heun",
-                "dpm_2",
-                "dpm_2_ancestral",
-                "lms",
-                "dpm_fast",
-                "dpm_adaptive",
-                "dpmpp_2s_ancestral",
-                "dpmpp_sde",
-                "dpmpp_sde_gpu",
-                "dpmpp_2m",
-                "dpmpp_2m_sde",
-                "dpmpp_2m_sde_gpu",
-                "ddim",
-                "uni_pc",
-                "uni_pc_bh2"
-              ]
+              []
             ]
           }
         },
         {
           "name": "scheduler",
-          "type": "normal,karras,exponential,simple,ddim_uniform",
+          "type": "COMBO",
           "link": 27,
           "widget": {
             "name": "scheduler",
             "config": [
-              [
-                "normal",
-                "karras",
-                "exponential",
-                "simple",
-                "ddim_uniform"
-              ]
+              []
             ]
           }
         },
         {
           "name": "start_at_step",
           "type": "INT",
-          "link": 36,
+          "link": 53,
           "widget": {
             "name": "start_at_step",
             "config": [
@@ -253,7 +231,7 @@
       "outputs": [
         {
           "name": "scheduler",
-          "type": "normal,karras,exponential,simple,ddim_uniform",
+          "type": "COMBO",
           "links": [
             26,
             27
@@ -284,7 +262,7 @@
       "outputs": [
         {
           "name": "sampler_name",
-          "type": "euler,euler_ancestral,heun,dpm_2,dpm_2_ancestral,lms,dpm_fast,dpm_adaptive,dpmpp_2s_ancestral,dpmpp_sde,dpmpp_sde_gpu,dpmpp_2m,dpmpp_2m_sde,dpmpp_2m_sde_gpu,ddim,uni_pc,uni_pc_bh2",
+          "type": "COMBO",
           "links": [
             24,
             25
@@ -317,7 +295,7 @@
           "name": "denoise",
           "type": "FLOAT",
           "links": [
-            31
+            47
           ],
           "slot_index": 0,
           "label": "refiner_ratio"
@@ -327,128 +305,6 @@
       "properties": {},
       "color": "#322",
       "bgcolor": "#533"
-    },
-    {
-      "id": 24,
-      "type": "Int to float",
-      "pos": [
-        1114,
-        852
-      ],
-      "size": {
-        "0": 218.39999389648438,
-        "1": 34
-      },
-      "flags": {},
-      "order": 10,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Value",
-          "type": "INT",
-          "link": 29,
-          "widget": {
-            "name": "Value",
-            "config": [
-              "INT",
-              {
-                "default": 1,
-                "min": -9223372036854776000,
-                "max": 9223372036854776000,
-                "step": 1
-              }
-            ]
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            30,
-            32
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Int to float (TOTAL STEPS)",
-      "properties": {
-        "Node name for S&R": "Int to float"
-      },
-      "widgets_values": [
-        1
-      ]
-    },
-    {
-      "id": 23,
-      "type": "Multiply",
-      "pos": [
-        1480,
-        1050
-      ],
-      "size": {
-        "0": 210,
-        "1": 54
-      },
-      "flags": {},
-      "order": 13,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Value_A",
-          "type": "FLOAT",
-          "link": 30,
-          "widget": {
-            "name": "Value_A",
-            "config": [
-              "FLOAT",
-              {
-                "default": 1,
-                "min": -1.7976931348623157e+308,
-                "max": 1.7976931348623157e+308,
-                "step": 0.01
-              }
-            ]
-          }
-        },
-        {
-          "name": "Value_B",
-          "type": "FLOAT",
-          "link": 31,
-          "widget": {
-            "name": "Value_B",
-            "config": [
-              "FLOAT",
-              {
-                "default": 1,
-                "min": -1.7976931348623157e+308,
-                "max": 1.7976931348623157e+308,
-                "step": 0.01
-              }
-            ]
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            33
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Multiply"
-      },
-      "widgets_values": [
-        1,
-        1
-      ]
     },
     {
       "id": 1,
@@ -529,61 +385,39 @@
               {
                 "default": 8,
                 "min": 0,
-                "max": 100
+                "max": 100,
+                "step": 0.1,
+                "round": 0.01
               }
             ]
           }
         },
         {
           "name": "sampler_name",
-          "type": "euler,euler_ancestral,heun,dpm_2,dpm_2_ancestral,lms,dpm_fast,dpm_adaptive,dpmpp_2s_ancestral,dpmpp_sde,dpmpp_sde_gpu,dpmpp_2m,dpmpp_2m_sde,dpmpp_2m_sde_gpu,ddim,uni_pc,uni_pc_bh2",
+          "type": "COMBO",
           "link": 24,
           "widget": {
             "name": "sampler_name",
             "config": [
-              [
-                "euler",
-                "euler_ancestral",
-                "heun",
-                "dpm_2",
-                "dpm_2_ancestral",
-                "lms",
-                "dpm_fast",
-                "dpm_adaptive",
-                "dpmpp_2s_ancestral",
-                "dpmpp_sde",
-                "dpmpp_sde_gpu",
-                "dpmpp_2m",
-                "dpmpp_2m_sde",
-                "dpmpp_2m_sde_gpu",
-                "ddim",
-                "uni_pc",
-                "uni_pc_bh2"
-              ]
+              []
             ]
           }
         },
         {
           "name": "scheduler",
-          "type": "normal,karras,exponential,simple,ddim_uniform",
+          "type": "COMBO",
           "link": 26,
           "widget": {
             "name": "scheduler",
             "config": [
-              [
-                "normal",
-                "karras",
-                "exponential",
-                "simple",
-                "ddim_uniform"
-              ]
+              []
             ]
           }
         },
         {
           "name": "end_at_step",
           "type": "INT",
-          "link": 35,
+          "link": 52,
           "widget": {
             "name": "end_at_step",
             "config": [
@@ -622,128 +456,6 @@
         0,
         10000,
         "enable"
-      ]
-    },
-    {
-      "id": 25,
-      "type": "Subtract",
-      "pos": [
-        1807,
-        851
-      ],
-      "size": {
-        "0": 210,
-        "1": 54
-      },
-      "flags": {},
-      "order": 14,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Value_A",
-          "type": "FLOAT",
-          "link": 32,
-          "widget": {
-            "name": "Value_A",
-            "config": [
-              "FLOAT",
-              {
-                "default": 1,
-                "min": -1.7976931348623157e+308,
-                "max": 1.7976931348623157e+308,
-                "step": 0.01
-              }
-            ]
-          }
-        },
-        {
-          "name": "Value_B",
-          "type": "FLOAT",
-          "link": 33,
-          "widget": {
-            "name": "Value_B",
-            "config": [
-              "FLOAT",
-              {
-                "default": 1,
-                "min": -1.7976931348623157e+308,
-                "max": 1.7976931348623157e+308,
-                "step": 0.01
-              }
-            ]
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "FLOAT",
-          "type": "FLOAT",
-          "links": [
-            34
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "Subtract"
-      },
-      "widgets_values": [
-        1,
-        1
-      ]
-    },
-    {
-      "id": 26,
-      "type": "Floor",
-      "pos": [
-        2080,
-        850
-      ],
-      "size": {
-        "0": 210,
-        "1": 34
-      },
-      "flags": {},
-      "order": 15,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "Value",
-          "type": "FLOAT",
-          "link": 34,
-          "widget": {
-            "name": "Value",
-            "config": [
-              "FLOAT",
-              {
-                "default": 1,
-                "min": -1.7976931348623157e+308,
-                "max": 1.7976931348623157e+308,
-                "step": 0.01
-              }
-            ]
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "INT",
-          "type": "INT",
-          "links": [
-            35,
-            36
-          ],
-          "shape": 3,
-          "slot_index": 0
-        }
-      ],
-      "title": "Floor (BASE STEPS)",
-      "properties": {
-        "Node name for S&R": "Floor"
-      },
-      "widgets_values": [
-        1
       ]
     },
     {
@@ -793,7 +505,7 @@
           "links": [
             20,
             21,
-            29
+            45
           ],
           "slot_index": 0,
           "label": "steps"
@@ -1034,10 +746,10 @@
         110,
         50
       ],
-      "size": [
-        260,
-        100
-      ],
+      "size": {
+        "0": 260,
+        "1": 100
+      },
       "flags": {},
       "order": 9,
       "mode": 0,
@@ -1050,6 +762,256 @@
       ],
       "color": "#432",
       "bgcolor": "#653"
+    },
+    {
+      "id": 32,
+      "type": "DF_Int_to_Float",
+      "pos": [
+        1092,
+        876
+      ],
+      "size": [
+        216,
+        48
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Value",
+          "type": "INT",
+          "link": 45,
+          "widget": {
+            "name": "Value",
+            "config": [
+              "INT",
+              {
+                "default": 1,
+                "min": -9223372036854776000,
+                "max": 9223372036854776000,
+                "step": 1,
+                "forceInput": false
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            46,
+            49
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Int to float (TOTAL STEPS)",
+      "properties": {
+        "Node name for S&R": "DF_Int_to_Float"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 34,
+      "type": "DF_Subtract",
+      "pos": [
+        1656,
+        864
+      ],
+      "size": [
+        312,
+        84
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Value_A",
+          "type": "FLOAT",
+          "link": 49,
+          "widget": {
+            "name": "Value_A",
+            "config": [
+              "FLOAT",
+              {
+                "default": 1,
+                "min": -1.7976931348623157e+308,
+                "max": 1.7976931348623157e+308,
+                "step": 0.01,
+                "forceInput": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Value_B",
+          "type": "FLOAT",
+          "link": 50,
+          "widget": {
+            "name": "Value_B",
+            "config": [
+              "FLOAT",
+              {
+                "default": 1,
+                "min": -1.7976931348623157e+308,
+                "max": 1.7976931348623157e+308,
+                "step": 0.01,
+                "forceInput": false
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            51
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DF_Subtract"
+      },
+      "widgets_values": [
+        1,
+        1
+      ]
+    },
+    {
+      "id": 35,
+      "type": "DF_Floor",
+      "pos": [
+        2040,
+        864
+      ],
+      "size": [
+        312,
+        60
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Value",
+          "type": "FLOAT",
+          "link": 51,
+          "widget": {
+            "name": "Value",
+            "config": [
+              "FLOAT",
+              {
+                "default": 1,
+                "min": -1.7976931348623157e+308,
+                "max": 1.7976931348623157e+308,
+                "step": 0.01,
+                "forceInput": false
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "INT",
+          "type": "INT",
+          "links": [
+            52,
+            53
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "title": "Floor (BASE STEPS)",
+      "properties": {
+        "Node name for S&R": "DF_Floor"
+      },
+      "widgets_values": [
+        1
+      ]
+    },
+    {
+      "id": 33,
+      "type": "DF_Multiply",
+      "pos": [
+        1392,
+        1008
+      ],
+      "size": [
+        216,
+        60
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "Value_A",
+          "type": "FLOAT",
+          "link": 46,
+          "widget": {
+            "name": "Value_A",
+            "config": [
+              "FLOAT",
+              {
+                "default": 1,
+                "min": -1.7976931348623157e+308,
+                "max": 1.7976931348623157e+308,
+                "step": 0.01,
+                "forceInput": false
+              }
+            ]
+          }
+        },
+        {
+          "name": "Value_B",
+          "type": "FLOAT",
+          "link": 47,
+          "widget": {
+            "name": "Value_B",
+            "config": [
+              "FLOAT",
+              {
+                "default": 1,
+                "min": -1.7976931348623157e+308,
+                "max": 1.7976931348623157e+308,
+                "step": 0.01,
+                "forceInput": false
+              }
+            ]
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "FLOAT",
+          "type": "FLOAT",
+          "links": [
+            50
+          ],
+          "shape": 3,
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "DF_Multiply"
+      },
+      "widgets_values": [
+        1,
+        1
+      ]
     }
   ],
   "links": [
@@ -1131,7 +1093,7 @@
       0,
       1,
       7,
-      "euler,euler_ancestral,heun,dpm_2,dpm_2_ancestral,lms,dpm_fast,dpm_adaptive,dpmpp_2s_ancestral,dpmpp_sde,dpmpp_sde_gpu,dpmpp_2m,dpmpp_2m_sde,dpmpp_2m_sde_gpu,ddim,uni_pc,uni_pc_bh2"
+      "COMBO"
     ],
     [
       25,
@@ -1139,7 +1101,7 @@
       0,
       2,
       7,
-      "euler,euler_ancestral,heun,dpm_2,dpm_2_ancestral,lms,dpm_fast,dpm_adaptive,dpmpp_2s_ancestral,dpmpp_sde,dpmpp_sde_gpu,dpmpp_2m,dpmpp_2m_sde,dpmpp_2m_sde_gpu,ddim,uni_pc,uni_pc_bh2"
+      "COMBO"
     ],
     [
       26,
@@ -1147,7 +1109,7 @@
       0,
       1,
       8,
-      "normal,karras,exponential,simple,ddim_uniform"
+      "COMBO"
     ],
     [
       27,
@@ -1155,71 +1117,7 @@
       0,
       2,
       8,
-      "normal,karras,exponential,simple,ddim_uniform"
-    ],
-    [
-      29,
-      16,
-      0,
-      24,
-      0,
-      "INT"
-    ],
-    [
-      30,
-      24,
-      0,
-      23,
-      0,
-      "FLOAT"
-    ],
-    [
-      31,
-      20,
-      0,
-      23,
-      1,
-      "FLOAT"
-    ],
-    [
-      32,
-      24,
-      0,
-      25,
-      0,
-      "FLOAT"
-    ],
-    [
-      33,
-      23,
-      0,
-      25,
-      1,
-      "FLOAT"
-    ],
-    [
-      34,
-      25,
-      0,
-      26,
-      0,
-      "FLOAT"
-    ],
-    [
-      35,
-      26,
-      0,
-      1,
-      9,
-      "INT"
-    ],
-    [
-      36,
-      26,
-      0,
-      2,
-      9,
-      "INT"
+      "COMBO"
     ],
     [
       37,
@@ -1284,6 +1182,70 @@
       2,
       2,
       "CONDITIONING"
+    ],
+    [
+      45,
+      16,
+      0,
+      32,
+      0,
+      "INT"
+    ],
+    [
+      46,
+      32,
+      0,
+      33,
+      0,
+      "FLOAT"
+    ],
+    [
+      47,
+      20,
+      0,
+      33,
+      1,
+      "FLOAT"
+    ],
+    [
+      49,
+      32,
+      0,
+      34,
+      0,
+      "FLOAT"
+    ],
+    [
+      50,
+      33,
+      0,
+      34,
+      1,
+      "FLOAT"
+    ],
+    [
+      51,
+      34,
+      0,
+      35,
+      0,
+      "FLOAT"
+    ],
+    [
+      52,
+      35,
+      0,
+      1,
+      9,
+      "INT"
+    ],
+    [
+      53,
+      35,
+      0,
+      2,
+      9,
+      "INT"
     ]
   ],
   "groups": [],
@@ -1316,7 +1278,7 @@
         ],
         "start_at_step": 0,
         "end_at_step": [
-          "26",
+          "35",
           0
         ],
         "return_with_leftover_noise": "enable",
@@ -1363,7 +1325,7 @@
           0
         ],
         "start_at_step": [
-          "26",
+          "35",
           0
         ],
         "end_at_step": 10000,
@@ -1416,50 +1378,6 @@
     "20": {
       "inputs": {}
     },
-    "23": {
-      "inputs": {
-        "Value_A": [
-          "24",
-          0
-        ],
-        "Value_B": [
-          "20",
-          0
-        ]
-      },
-      "class_type": "Multiply"
-    },
-    "24": {
-      "inputs": {
-        "Value": [
-          "16",
-          0
-        ]
-      },
-      "class_type": "Int to float"
-    },
-    "25": {
-      "inputs": {
-        "Value_A": [
-          "24",
-          0
-        ],
-        "Value_B": [
-          "23",
-          0
-        ]
-      },
-      "class_type": "Subtract"
-    },
-    "26": {
-      "inputs": {
-        "Value": [
-          "25",
-          0
-        ]
-      },
-      "class_type": "Floor"
-    },
     "27": {
       "inputs": {}
     },
@@ -1483,6 +1401,50 @@
         ]
       },
       "class_type": "FromBasicPipe"
+    },
+    "32": {
+      "inputs": {
+        "Value": [
+          "16",
+          0
+        ]
+      },
+      "class_type": "DF_Int_to_Float"
+    },
+    "33": {
+      "inputs": {
+        "Value_A": [
+          "32",
+          0
+        ],
+        "Value_B": [
+          "20",
+          0
+        ]
+      },
+      "class_type": "DF_Multiply"
+    },
+    "34": {
+      "inputs": {
+        "Value_A": [
+          "32",
+          0
+        ],
+        "Value_B": [
+          "33",
+          0
+        ]
+      },
+      "class_type": "DF_Subtract"
+    },
+    "35": {
+      "inputs": {
+        "Value": [
+          "34",
+          0
+        ]
+      },
+      "class_type": "DF_Floor"
     }
   }
 }
